@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Tile from './Tile.js';
 import noble from 'noble';
-import Homepage from './Homepage'
+import Homepage from './Homepage';
+import Setup from './setup';
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
 
     this.startScanning = this.startScanning.bind(this);
     this.startRide = this.startRide.bind(this);
+    this.setup = this.setup.bind(this);
     this.state = {
       power: 0,
       cadence: 0,
@@ -82,8 +84,10 @@ class App extends Component {
           <button onClick={this.startScanning}>Start Scanning</button>
         </div>
       );
+    } else if (this.state.showSetup) {
+      content = (<Setup/>);
     } else {
-      content = (<Homepage startRide={this.startRide} scan={this.startScanning}/>);
+      content = (<Homepage startRide={this.startRide} scan={this.startScanning} setup={this.setup}/>);
     }
 
     return content;
@@ -91,6 +95,10 @@ class App extends Component {
 
   startRide() {
     this.setState({rideStarted: true});
+  }
+
+  setup() {
+    this.setState({showSetup: true});
   }
 
   render() {
