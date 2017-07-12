@@ -1,0 +1,16 @@
+.indicatorBox {
+	height: 50px;
+	width: 49%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: red;
+	display: inline-block;
+	margin: 0px 10px 0px 0px;
+}
+.dark {
+	background-color: #eaeaed;
+}
+
+.light {
+	background-color: white;
+}
