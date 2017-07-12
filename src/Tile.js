@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Tile.css';
+import './css/Tile.css';
 import 'noble';
 
 class App extends Component {
